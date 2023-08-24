@@ -11,6 +11,8 @@
         "build:dev": "webpack --env mode=development"
     },
     "devDependencies": {
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+        "@svgr/webpack": "^8.1.0",
         "@types/node": "^20.5.0",
         "@types/react": "^18.2.20",
         "@types/react-dom": "^18.2.7",
@@ -31,8 +33,13 @@
         "webpack-dev-server": "^4.15.1"
     },
     "dependencies": {
+        "i18next": "^23.4.5",
+        "i18next-browser-languagedetector": "^7.1.0",
+        "i18next-http-backend": "^2.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.15.0"
+        "react-i18next": "^13.2.0",
+        "react-router-dom": "^6.15.0",
+        "react-svg": "^16.1.22"
     }
 }
