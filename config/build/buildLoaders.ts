@@ -18,6 +18,24 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
         use: ["@svgr/webpack"],
     }
 
+    const babelLoader = {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ["@babel/preset-env"],
+                plugins: [
+                    [
+                        "i18next-extract",
+                        { locales: ["ru", "en"], keyAsDefaultValue: true },
+                    ],
+                    // […] your other plugins […]
+                ],
+            },
+        },
+    }
+
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -47,5 +65,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
         exclude: /node_modules/,
     }
 
-    return [assetsLoader, svgLoader, typescriptLoader, cssLoader]
+    return [assetsLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
 }

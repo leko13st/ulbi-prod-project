@@ -7,9 +7,10 @@ const MainPage: React.FC = () => {
     return (
         <div>
             <div>
-                <div>{t("value")}</div>
+                <div>{t("значение")}</div>
             </div>
-            {t("mainPage")}
+            {t("главная страница")}
+            {t("Добро пожаловать")}
         </div>
     )
 }

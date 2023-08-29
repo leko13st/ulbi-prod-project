@@ -11,6 +11,8 @@
         "build:dev": "webpack --env mode=development"
     },
     "devDependencies": {
+        "@babel/core": "^7.22.11",
+        "@babel/preset-env": "^7.22.10",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
         "@svgr/webpack": "^8.1.0",
         "@types/node": "^20.5.0",
@@ -19,9 +21,12 @@
         "@types/react-router-dom": "^5.3.3",
         "@types/webpack": "^5.28.1",
         "@types/webpack-dev-server": "^4.7.2",
+        "babel-loader": "^9.1.3",
+        "babel-plugin-i18next-extract": "^0.9.0",
         "css-loader": "^6.8.1",
         "html-webpack-plugin": "^5.5.3",
         "mini-css-extract-plugin": "^2.7.6",
+        "react-refresh": "^0.14.0",
         "sass": "^1.65.1",
         "sass-loader": "^13.3.2",
         "style-loader": "^3.3.3",

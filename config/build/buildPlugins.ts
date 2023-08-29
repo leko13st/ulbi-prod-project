@@ -23,6 +23,6 @@ export const buildPlugins = (
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new webpack.HotModuleReplacementPlugin(),
-        // isDev && new ReactRefreshWebpackPlugin(),
+        isDev && new ReactRefreshWebpackPlugin(),
     ]
 }
