@@ -1,6 +1,6 @@
-declare module "*.scss" {
-    const content: { readonly [key: string]: string }
-    export = content
+declare module '*.scss' {
+    const content: { readonly [key: string]: string };
+    export = content;
 }
 
 // declare module "*.svg" {
@@ -8,10 +8,10 @@ declare module "*.scss" {
 //     export default content
 // }
 
-declare module "*.svg" {
-    import React from "react"
-    const SVG: React.FC<React.SVGProps<SVGSVGElement>>
-    export default SVG
+declare module '*.svg' {
+    import React from 'react';
+    const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+    export default SVG;
 }
 
-declare const __IS_DEV__: boolean
+declare const __IS_DEV__: boolean;

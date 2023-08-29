@@ -1,43 +1,41 @@
-import React from "react"
-import { classNames } from "shared/lib/classNames/classNames"
-import { useTheme, Theme } from "app/providers/ThemeProvider"
-import styles from "./ThemeSwitcher.module.scss"
-import DarkThemeIcon from "shared/assets/icons/theme-dark.svg"
-import LightThemeIcon from "shared/assets/icons/theme-light.svg"
-import { Button, ThemeButton } from "shared/ui/Button/Button"
+import React from 'react';
+
+import { useTheme, Theme } from 'app/providers/ThemeProvider';
+import DarkThemeIcon from 'shared/assets/icons/theme-dark.svg';
+import LightThemeIcon from 'shared/assets/icons/theme-light.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+
+import styles from './ThemeSwitcher.module.scss';
 
 type PropsType = {
-    className?: string
-}
+    className?: string;
+};
 
 export const ThemeSwitcher: React.FC<PropsType> = ({ className }) => {
-    const { theme, toggleTheme } = useTheme()
+    const { theme, toggleTheme } = useTheme();
 
     const getThemeIcon = () => {
         switch (theme) {
             case Theme.LIGHT: {
-                return <LightThemeIcon height={"40px"} />
+                return <LightThemeIcon height={'40px'} />;
             }
             case Theme.DARK: {
-                return <DarkThemeIcon height={"40px"} />
+                return <DarkThemeIcon height={'40px'} />;
             }
             default: {
-                return <LightThemeIcon />
+                return <LightThemeIcon />;
             }
         }
-    }
+    };
 
     return (
-        // <ReactSVG
-        //     src={getThemeIcon()}
-        //     className={classNames(styles.themeSwitcher, {}, [className])}
-        //     onClick={toggleTheme}
-        // />
         <Button
             theme={ThemeButton.CLEAR}
             className={classNames(styles.themeSwitcher, {}, [className])}
-            onClick={toggleTheme}>
+            onClick={toggleTheme}
+        >
             {getThemeIcon()}
         </Button>
-    )
-}
+    );
+};
