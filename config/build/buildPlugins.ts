@@ -3,6 +3,7 @@ import EslintWebpackPlugin from 'eslint-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export const buildPlugins = (
     templatePath: string,
@@ -27,10 +28,11 @@ export const buildPlugins = (
             useEslintrc: true,
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ] as webpack.WebpackPluginInstance[];
 
     if (isDev) {
-        plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
     }
 
     return plugins;

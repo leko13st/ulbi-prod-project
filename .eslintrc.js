@@ -7,6 +7,8 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
     ],
     overrides: [
         {
@@ -18,13 +20,19 @@ module.exports = {
                 sourceType: 'script',
             },
         },
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'react'],
+    plugins: ['@typescript-eslint', 'react', 'i18next'],
     rules: {
         indent: [2, 4, { SwitchCase: 1 }],
         'linebreak-style': ['error', 'windows'],
@@ -38,5 +46,11 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
         'react/jsx-indent': [2, 4],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
+        '@typescript-eslint/no-unused-vars': 'warn',
+        'react/display-name': 'off',
     },
 };
