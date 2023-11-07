@@ -27,12 +27,12 @@ export const buildPlugins = (
         new EslintWebpackPlugin({
             useEslintrc: true,
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({ openAnalyzer: false }),
     ] as webpack.WebpackPluginInstance[];
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
     }
 
     return plugins;
