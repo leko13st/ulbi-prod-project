@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const AboutPage: React.FC = () => {
-    return <div>AboutPage</div>;
+    const { t } = useTranslation();
+
+    return <div>{t('о странице')}</div>;
 };
 
 export default AboutPage;
